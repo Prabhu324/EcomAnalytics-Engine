@@ -1,0 +1,87 @@
+.homepage-bg-wrapper {
+  width: 100%;
+  /* Takes exactly the remaining vertical window space */
+  min-height: calc(100vh - 70px); 
+  background-color: #0b0f17;
+  
+  /* Corner neon ambient gradients */
+  background-image: 
+    radial-gradient(circle at top left, rgba(239, 68, 68, 0.12) 0%, transparent 40%),
+    radial-gradient(circle at bottom right, rgba(34, 197, 94, 0.12) 0%, transparent 45%);
+  
+  padding: 40px 5vw; /* Fluid inner margin matches navbar grid */
+}
+
+.homepage-content {
+  width: 100%;
+  max-width: 1400px; /* Expands wider to accommodate larger windows */
+  margin: 0 auto;
+}
+
+.section-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 30px;
+  border-left: 4px solid #3182ce;
+  padding-left: 15px;
+}
+
+/* Highly dynamic auto-fitting product array */
+.products-grid {
+  display: grid;
+  /* Automatically columns based on viewport footprint */
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 30px;
+  width: 100%;
+}
+
+.product-card {
+  background-color: #1a202c;
+  border: 1px solid #2d3748;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.2s ease-in-out;
+}
+
+.product-card:hover {
+  background-color: #2d3748; /* Slight gray coloring shift requested */
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+}
+
+.image-placeholder {
+  height: 220px;
+  background-color: #111622;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.product-details {
+  padding: 20px;
+}
+
+/* Responsiveness adjustments specifically for compact smart phones */
+@media (max-width: 600px) {
+  .homepage-bg-wrapper {
+    min-height: calc(100vh - 60px); /* Matches mobile navbar height adjustment */
+    padding: 20px 4vw;
+  }
+  
+  .section-title {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+  }
+  
+  .products-grid {
+    /* Shrinks columns boundaries so cards fit tiny screens gracefully */
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 20px;
+  }
+  
+  .image-placeholder {
+    height: 180px;
+  }
+}

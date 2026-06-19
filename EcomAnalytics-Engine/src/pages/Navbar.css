@@ -1,0 +1,99 @@
+.app-navbar {
+  width: 100%;
+  height: 70px;
+  background-color: #1a202c;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 5vw; /* Scales padding based on screen size */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar-left {
+  display: flex;
+  align-items: center;
+}
+
+.logo-brand {
+  color: #ffffff;
+  font-size: 24px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  text-decoration: none;
+}
+
+/* Fluid search bar layout */
+.navbar-center-search {
+  display: flex;
+  flex: 1;
+  max-width: 800px;
+  margin: 0 3vw; /* Adaptive horizontal spacing */
+  position: relative;
+}
+
+.navbar-center-search input {
+  width: 100%;
+  height: 42px;
+  padding: 0 45px 0 15px;
+  border: 1px solid #4a5568;
+  border-radius: 8px;
+  background-color: #2d3748;
+  color: #ffffff;
+  font-size: 15px;
+  outline: none;
+}
+
+.navbar-center-search input:focus {
+  border-color: #3182ce;
+}
+
+.search-submit-btn {
+  position: absolute;
+  right: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+/* Mobile-First Adaptations */
+@media (max-width: 600px) {
+  .app-navbar {
+    height: 60px;
+    padding: 0 3vw;
+  }
+  
+  .logo-brand {
+    font-size: 18px;
+    letter-spacing: 0.5px;
+  }
+  
+  .navbar-center-search {
+    margin: 0 2vw;
+  }
+  
+  .navbar-center-search input {
+    height: 36px;
+    font-size: 13px;
+  }
+  
+  .navbar-login-btn {
+    padding: 6px 14px;
+    font-size: 13px;
+  }
+  
+  .cart-icon {
+    font-size: 18px;
+  }
+}
