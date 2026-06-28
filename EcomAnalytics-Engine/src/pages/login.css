@@ -1,0 +1,125 @@
+/* Background wrapper taking the rest of the layout viewport */
+.login-bg-wrapper {
+  width: 100%;
+  min-height: calc(100vh - 70px); /* Adjusts if navbar height shifts */
+  background-color: #0b0f17; /* Pure obsidian black */
+  
+  /* Corner neon glows matching your homepage backdrop configuration */
+  background-image: 
+    radial-gradient(circle at top left, rgba(239, 68, 68, 0.12) 0%, transparent 40%),
+    radial-gradient(circle at bottom right, rgba(34, 197, 94, 0.12) 0%, transparent 45%);
+    
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+/* Center Form Box Window */
+.login-card {
+  background-color: #1a202c; /* Modern charcoal grey panel box */
+  border: 1px solid #2d3748;
+  padding: 40px;
+  width: 100%;
+  max-width: 420px; /* Clean structured constraint size */
+  border-radius: 12px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+}
+
+.login-title {
+  color: #ffffff;
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  text-align: center;
+  letter-spacing: 0.5px;
+}
+
+.login-subtitle {
+  color: #a0aec0;
+  font-size: 14px;
+  text-align: center;
+  margin-bottom: 30px;
+  line-height: 1.4;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Alignment wrappers for input slots */
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.input-group label {
+  color: #e2e8f0;
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.input-group input {
+  width: 100%;
+  height: 46px;
+  padding: 0 16px;
+  border: 1px solid #4a5568;
+  border-radius: 8px;
+  background-color: #111622; /* Dark core inside entry slots */
+  color: #ffffff;
+  font-size: 15px;
+  outline: none;
+  transition: all 0.2s ease-in-out;
+}
+
+/* Focused glow boundaries */
+.input-group input:focus {
+  border-color: #3182ce; /* Bright brand accent blue */
+  box-shadow: 0 0 0 3px rgba(49, 130, 206, 0.25);
+  background-color: #151b29;
+}
+
+/* Action Execution Button */
+.login-submit-btn {
+  width: 100%;
+  height: 46px;
+  background-color: #3182ce;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: all 0.2s ease;
+}
+
+.login-submit-btn:hover {
+  background-color: #2b6cb0;
+  transform: translateY(-1px);
+}
+
+.login-submit-btn:active {
+  transform: translateY(0);
+}
+
+/* Fluid display optimization rules for tiny mobile views */
+@media (max-width: 480px) {
+  .login-bg-wrapper {
+    min-height: calc(100vh - 60px); /* Match mobile header profile rules */
+  }
+  
+  .login-card {
+    padding: 30px 20px;
+    border-radius: 8px;
+  }
+  
+  .login-title {
+    font-size: 22px;
+  }
+}
